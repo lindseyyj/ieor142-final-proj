@@ -1,6 +1,5 @@
-# 📦 Streamlit App Starter Kit 
+# IEOR142A Final Project - NBA Playoffs 🏀
 ```
-⬆️ (Replace above with your app's name)
 ```
 
 Description of the app ...
