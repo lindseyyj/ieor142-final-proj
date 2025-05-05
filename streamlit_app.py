@@ -73,7 +73,7 @@ def fetch_gif_url(player_name: str) -> str | None:
 
 gif_player = st.sidebar.selectbox(
     "Choose a player for GIF",
-    options=selected_players if selected_players else players
+    options=selected if selected else players
 )
 
 if st.sidebar.button("Load GIF"):
@@ -83,6 +83,7 @@ if st.sidebar.button("Load GIF"):
         st.sidebar.image(gif_url, use_column_width=True, caption=gif_player)
     else:
         st.sidebar.write("No GIF found. Try another player!")
+        
 if st.sidebar.checkbox("Display Raw Data"):
     st.subheader("Filtered Data")
     st.dataframe(df_filt[["gameDate", "Player", "points", "Team", "Opponent"]])
