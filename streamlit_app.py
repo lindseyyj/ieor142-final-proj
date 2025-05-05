@@ -80,7 +80,7 @@ if st.sidebar.button("Load GIF"):
     with st.spinner("Fetching GIF…"):
         gif_url = fetch_gif_url(gif_player)
     if gif_url:
-        + st.sidebar.image(gif_url, use_container_width=True, caption=gif_player)
+        + st.sidebar.image(gif_url, caption=gif_player)
     else:
         st.sidebar.write("No GIF found. Try another player!")
         
