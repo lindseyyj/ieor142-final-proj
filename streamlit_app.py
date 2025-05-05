@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import requests
 
 st.set_page_config(page_title="NBA Points Over Time", layout="wide")
 st.title("🏀 NBA 2025 Playoffs: Points by Game Over Time")
