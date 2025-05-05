@@ -9,7 +9,7 @@ st.title("🏀 NBA 2025 Playoffs: Points by Game Over Time")
 def load_data():
     df = pd.read_csv("final_df.csv", parse_dates=["gameDate"])
     df["Player"] = df["firstName"] + " " + df["lastName"]
-     df = df.rename(columns={
+    df = df.rename(columns={
         "playerteamName": "Team",
         "opponentteamName": "Opponent"
     })
