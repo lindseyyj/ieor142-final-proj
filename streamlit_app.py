@@ -3,12 +3,17 @@ import pandas as pd
 import plotly.express as px
 
 st.set_page_config(page_title="NBA Points Over Time", layout="wide")
-st.title("🏀 Points by Game Over Time")
+st.title("🏀 NBA 2025 Playoffs: Points by Game Over Time")
 
 @st.cache_data
 def load_data():
     df = pd.read_csv("final_df.csv", parse_dates=["gameDate"])
     df["Player"] = df["firstName"] + " " + df["lastName"]
+     df = df.rename(columns={
+        "playerteamName": "Team",
+        "opponentteamName": "Opponent"
+    })
+    df = df.sort_values("gameDate")
     return df
 
 df = load_data()
