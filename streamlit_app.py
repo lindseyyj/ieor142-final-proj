@@ -55,6 +55,33 @@ stats = (
 )
 st.sidebar.dataframe(stats)
 
+#GIFS 
+st.sidebar.markdown("---")
+st.sidebar.header("🏆 Playoff GIFs")
+
+def fetch_gif_url(player_name: str) -> str | None:
+    """Search Giphy for a single GIF matching ‘player_name playoffs nba’."""
+    params = {
+        "api_key": st.secrets["nCOwLzFgSR2S9hCYdNGhV4NzAnCFmOoL"],
+        "q": f"{player_name} playoffs nba",
+        "limit": 1,
+        "rating": "pg"
+    }
+    resp = requests.get("https://api.giphy.com/v1/gifs/search", params=params)
+    resp.raise_for_status()
+    data = resp.json().get("data", [])
+    return data[0]["images"]["downsized"]["url"] if data else None
+    
+gif_player = st.sidebar.selectbox("Choose a player for GIF", selected_players)
+
+if st.sidebar.button("Load GIF"):
+    with st.spinner("Fetching GIF…"):
+        url = fetch_gif_url(gif_player)
+    if url:
+        st.sidebar.image(url, use_column_width=True, caption=gif_player)
+    else:
+        st.sidebar.write("No GIF found. Try another player!")
+
 if st.sidebar.checkbox("Display Raw Data"):
     st.subheader("Filtered Data")
     st.dataframe(df_filt[["gameDate", "Player", "points", "Team", "Opponent"]])
