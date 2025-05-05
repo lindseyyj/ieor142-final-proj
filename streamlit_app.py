@@ -54,6 +54,6 @@ stats = (
 )
 st.sidebar.dataframe(stats)
 
-if st.sidebar.checkbox("Show raw data"):
+if st.sidebar.checkbox("Display Raw Data"):
     st.subheader("Filtered Data")
     st.dataframe(df_filt[["gameDate", "Player", "points", "Team", "Opponent"]])
