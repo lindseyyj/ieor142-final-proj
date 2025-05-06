@@ -1,4 +1,4 @@
-# IEOR142A Final Project - NBA 2025 Playoffs Performance Dashboard 🏀
+# 🏀 IEOR142A Final Project - NBA 2025 Playoffs Performance Dashboard 
 
 The NBA 2025 Playoffs Performance Dashboard features two interactive visualizations that explore player performance. 
 
@@ -8,6 +8,6 @@ Additionally, the sidebar also includes a Playoff GIFs selector powered by the G
 
 The second visualization is an interactive correlation heatmap showing coefficients among six core per-game metrics—points, assists, total rebounds, minutes played, turnovers, and plus/minus points. The heatmap shows relationships from strong negative to strong positive by recalculating for only the players and date range you’ve selected in the sidebar. Every cell is annotated with its correlation value to two decimal places, and you can hover to reveal the exact stat pair and r-value. 
 
-## Demo App
+## 👩🏻‍💻 Demo App
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ieor142-final-proj.streamlit.app/#nba-2025-playoffs-points-by-game-over-time)
