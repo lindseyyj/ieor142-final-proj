@@ -83,6 +83,6 @@ if st.sidebar.button("Load GIF"):
     else:
         st.sidebar.write("No GIF found.")
         
-if st.sidebar.checkbox("Display Raw Data"):
-    st.subheader("Filtered Data")
+if st.sidebar.checkbox("Display Raw Filtered Data"):
+    st.subheader("Raw Filtered Data")
     st.dataframe(df_filt[["gameDate", "Player", "points", "Team", "Opponent"]])
