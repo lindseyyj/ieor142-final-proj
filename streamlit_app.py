@@ -106,7 +106,7 @@ fig_corr = px.imshow(
     corr,
     x=features,
     y=features,
-    color_continuous_scale="RdBu_r",
+    text_auto=".2f", 
     zmin=-1,
     zmax=1,
     labels={"color": "Correlation (r)"},
