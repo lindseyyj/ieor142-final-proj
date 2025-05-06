@@ -75,13 +75,13 @@ if st.sidebar.button("Load GIF"):
     if gif_url:
         gif_bytes = requests.get(gif_url).content
         st.sidebar.image(gif_bytes, caption=gif_player, width=300)
+        st.image(
+            gif_bytes,
+            caption=gif_player,
+            use_container_width=True
+        )
     else:
         st.sidebar.write("No GIF found.")
-     st.image(
-        gif_bytes,
-        caption=gif_player,
-        use_container_width=True
-    )
         
 if st.sidebar.checkbox("Display Raw Data"):
     st.subheader("Filtered Data")
