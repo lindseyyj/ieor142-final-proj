@@ -6,7 +6,7 @@ The first visualization is a line chart that plots each selected player’s poin
 
 Additionally, the sidebar also includes a Playoff GIFs selector powered by the Giphy API. A dropdown menu lists all available players, and when you choose one and click Load GIF, it displays an GIF from the current playoffs. 
 
-The second visualization is an interactive correlation heatmap showing Pearson coefficients among six core per-game metrics—points, assists, total rebounds, minutes played, turnovers, and plus/minus points. The heatmap shows relationships from strong negative to strong positive by recalculating for only the players and date range you’ve selected in the sidebar. Every cell is annotated with its correlation value to two decimal places, and you can hover to reveal the exact stat pair and r-value. 
+The second visualization is an interactive correlation heatmap showing coefficients among six core per-game metrics—points, assists, total rebounds, minutes played, turnovers, and plus/minus points. The heatmap shows relationships from strong negative to strong positive by recalculating for only the players and date range you’ve selected in the sidebar. Every cell is annotated with its correlation value to two decimal places, and you can hover to reveal the exact stat pair and r-value. 
 
 ## Demo App
 
