@@ -86,3 +86,39 @@ if st.sidebar.button("Load GIF"):
 if st.sidebar.checkbox("Display Raw Filtered Data"):
     st.subheader("Raw Filtered Data")
     st.dataframe(df_filt[["gameDate", "Player", "points", "Team", "Opponent"]])
+
+import plotly.express as px
+
+# Correlation Heatmap 
+st.subheader("🔍 Correlation Matrix of Key Player Stats")
+
+features = [
+    "points",
+    "assists",
+    "reboundsTotal",
+    "numMinutes",
+    "turnovers",
+    "plusMinusPoints",
+]
+
+corr = df_filt[features].corr()
+
+# Build Plotly Heatmap
+fig_corr = px.imshow(
+    corr,
+    x=features,
+    y=features,
+    color_continuous_scale="RdBu_r",
+    zmin=-1,
+    zmax=1,
+    labels={"color": "Correlation (r)"},
+    title="Correlation Matrix of Key Player Stats"
+)
+fig_corr.update_layout(
+    width=600,
+    height=600,
+    margin=dict(l=40, r=40, t=50, b=40)
+)
+
+st.plotly_chart(fig_corr, use_container_width=True)
+
