@@ -69,7 +69,7 @@ def fetch_gif_url(player_name: str) -> str | None:
     return data[0]["images"]["downsized"]["url"] if data else None
 
 st.sidebar.header("🏆 Playoff GIFs")
-gif_player = st.sidebar.selectbox("Choose a player for GIF", ["LeBron James", "Anthony Davis"])
+gif_player = st.sidebar.selectbox("Choose a player for GIF", options=players, index=players.index("LeBron James"))
 if st.sidebar.button("Load GIF"):
     gif_url = fetch_gif_url(gif_player)   # Now fetch_gif_url is defined!
     if gif_url:
