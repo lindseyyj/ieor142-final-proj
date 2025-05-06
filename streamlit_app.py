@@ -56,27 +56,27 @@ stats = (
 st.sidebar.dataframe(stats)
 
 #GIFS 
+def fetch_gif_url(player_name: str) -> str | None:
+    params = {
+        "api_key": st.secrets["GIPHY_API_KEY"],
+        "q": f"{player_name} playoffs nba",
+        "limit": 1,
+        "rating": "pg"
+    }
+    resp = requests.get("https://api.giphy.com/v1/gifs/search", params=params)
+    resp.raise_for_status()
+    data = resp.json().get("data", [])
+    return data[0]["images"]["downsized"]["url"] if data else None
+
+st.sidebar.header("🏆 Playoff GIFs")
+gif_player = st.sidebar.selectbox("Choose a player for GIF", ["LeBron James", "Anthony Davis"])
 if st.sidebar.button("Load GIF"):
-    with st.spinner("Fetching GIF…"):
-        gif_url = fetch_gif_url(gif_player)
-
+    gif_url = fetch_gif_url(gif_player)   # Now fetch_gif_url is defined!
     if gif_url:
-        try:
-            # 1. Download the GIF bytes
-            resp = requests.get(gif_url)
-            resp.raise_for_status()
-            gif_bytes = resp.content
-
-            # 2. Render the GIF from raw bytes
-            st.sidebar.image(
-                gif_bytes,
-                caption=gif_player,
-                width=300   # optional: fix the sidebar width
-            )
-        except Exception as e:
-            st.sidebar.error(f"Couldn’t load GIF: {e}")
+        gif_bytes = requests.get(gif_url).content
+        st.sidebar.image(gif_bytes, caption=gif_player, width=300)
     else:
-        st.sidebar.warning("No GIF found for that player.")
+        st.sidebar.write("No GIF found.")
         
 if st.sidebar.checkbox("Display Raw Data"):
     st.subheader("Filtered Data")
