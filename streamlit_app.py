@@ -77,6 +77,11 @@ if st.sidebar.button("Load GIF"):
         st.sidebar.image(gif_bytes, caption=gif_player, width=300)
     else:
         st.sidebar.write("No GIF found.")
+     st.image(
+        gif_bytes,
+        caption=gif_player,
+        use_container_width=True
+    )
         
 if st.sidebar.checkbox("Display Raw Data"):
     st.subheader("Filtered Data")
