@@ -11,7 +11,3 @@ The second visualization is an interactive correlation heatmap showing Pearson c
 ## Demo App
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ieor142-final-proj.streamlit.app/#nba-2025-playoffs-points-by-game-over-time)
-
-## GitHub Codespaces
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/app-starter-kit?quickstart=1)
