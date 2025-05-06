@@ -87,8 +87,6 @@ if st.sidebar.checkbox("Display Raw Filtered Data"):
     st.subheader("Raw Filtered Data")
     st.dataframe(df_filt[["gameDate", "Player", "points", "Team", "Opponent"]])
 
-import plotly.express as px
-
 # Correlation Heatmap 
 st.subheader("🔍 Correlation Matrix of Key Player Stats")
 
@@ -121,4 +119,5 @@ fig_corr.update_layout(
 )
 
 st.plotly_chart(fig_corr, use_container_width=True)
+streamlit run streamlit_app.py
 
