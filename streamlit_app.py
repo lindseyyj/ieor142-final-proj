@@ -5,6 +5,7 @@ import requests
 
 st.set_page_config(page_title="NBA Points Over Time", layout="wide")
 st.title("🏀 NBA 2025 Playoffs Performance Dashboard")
+st.subheader("🔍 Per-Game Points Over Time")
 
 @st.cache_data
 def load_data():
