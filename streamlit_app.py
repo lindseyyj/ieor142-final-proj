@@ -81,7 +81,7 @@ def fetch_gif_url(player_name: str) -> str | None:
 st.sidebar.header("🏆 Playoff GIFs")
 gif_player = st.sidebar.selectbox("Choose a player for GIF", options=players, index=players.index("LeBron James"))
 if st.sidebar.button("Load GIF"):
-    gif_url = fetch_gif_url(gif_player)   # Now fetch_gif_url is defined!
+    gif_url = fetch_gif_url(gif_player)
     if gif_url:
         gif_bytes = requests.get(gif_url).content
         st.sidebar.image(gif_bytes, caption=gif_player, width=300)
